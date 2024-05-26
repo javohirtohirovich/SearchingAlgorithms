@@ -10,25 +10,25 @@ public class Program
 
     public static int BinarySearchFunction(int[] arr, int valSearch)
     {
-        int startIndx = 0;
-        int endIndx = arr.Length - 1;
-        while (startIndx <= endIndx)
+        int lowIndx = 0;
+        int highIndx = arr.Length - 1;
+        while (lowIndx <= highIndx)
         {
-            int mediumIndx = startIndx + (endIndx - startIndx) / 2;
+            int mediumIndx = lowIndx + (highIndx - lowIndx) / 2;
             if (arr[mediumIndx] == valSearch)
             {
                 return mediumIndx;
             }
             else if (arr[mediumIndx] > valSearch)
             {
-                endIndx = mediumIndx - 1;
+                highIndx = mediumIndx - 1;
             }
             else
             {
-                startIndx = mediumIndx + 1;
+                lowIndx = mediumIndx + 1;
             }
         }
-        return -1; 
+        return -1;
     }
 
 }
